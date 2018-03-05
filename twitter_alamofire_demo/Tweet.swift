@@ -18,7 +18,7 @@ class Tweet {
     var retweetCount: Int // Update favorite count label
     var retweeted: Bool // Configure retweet button
     var user: User // Contains name, screenname, etc. of tweet author
-    var createdAtString: String // Display date
+    var createdAtString: Date // Display date
     
     // For Retweets
     var retweetedByUser: User?  // user who retweeted if tweet is retweet
@@ -42,12 +42,12 @@ class Tweet {
         // Configure the input format to parse the date string
         formatter.dateFormat = "E MMM d HH:mm:ss Z y"
         // Convert String to Date
-        let date = formatter.date(from: createdAtOriginalString)!
+        createdAtString = formatter.date(from: createdAtOriginalString)!
         // Configure output format
         formatter.dateStyle = .short
         formatter.timeStyle = .none
         // Convert Date to String
-        createdAtString = formatter.string(from: date)
+        // createdAtString = formatter.string(from: date)
     }
     
     static func tweets(with array: [[String: Any]]) -> [Tweet] {

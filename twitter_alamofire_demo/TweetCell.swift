@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import DateToolsSwift
 
 class TweetCell: UITableViewCell {
     
@@ -23,7 +24,7 @@ class TweetCell: UITableViewCell {
             profileImage.af_setImage(withURL: tweet.user.profileImageURL!)
             tweetTextLabel.text = tweet.text
             likeLabel.text = String(tweet.favoriteCount!)
-            dateLabel.text = tweet.createdAtString
+            dateLabel.text = tweet.createdAtString.shortTimeAgoSinceNow
             retweetLabel.text = String(tweet.retweetCount)
             screenNameLabel.text = tweet.user.screenName
         }
