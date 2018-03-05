@@ -18,24 +18,6 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var retweetLabel: UILabel!
     
-    @IBAction func didTapFavorite(_ sender: Any) {
-        print("Reached here! ")
-        tweet.favorited = true
-        tweet.favoriteCount! += 1
-        refreshData()
-        APIManager.shared.favorite(tweet) { (tweet: Tweet?, error: Error?) in
-            if let  error = error {
-                print("Error favoriting tweet: \(error.localizedDescription)")
-            } else if let tweet = tweet {
-                print("Successfully favorited the following Tweet: \n\(tweet.text)")
-            }
-        }
-    }
-    
-    @IBAction func didTapRetweet(_ sender: Any) {
-        
-    }
-    
     var tweet: Tweet! {
         didSet {
             profileImage.af_setImage(withURL: tweet.user.profileImageURL!)
@@ -46,6 +28,59 @@ class TweetCell: UITableViewCell {
             screenNameLabel.text = tweet.user.screenName
         }
     }
+    
+    @IBAction func didTapFavorite(_ sender: Any) {
+        // Check if it's already a favorite.
+        print(tweet.favorited!)
+        if tweet.favorited!{
+            tweet.favorited = false
+            tweet.favoriteCount! -= 1
+            APIManager.shared.unFavorite(tweet) { (tweet: Tweet?, error: Error?) in
+                if let  error = error {
+                    print("Error favoriting tweet: \(error.localizedDescription)")
+                } else if let tweet = tweet {
+                    print("Successfully favorited the following Tweet: \n\(tweet.text)")
+                }
+            }
+        } else{
+            tweet.favorited = true
+            tweet.favoriteCount! += 1
+            APIManager.shared.favorite(tweet) { (tweet: Tweet?, error: Error?) in
+                if let  error = error {
+                    print("Error Unfavoriting tweet: \(error.localizedDescription)")
+                } else if let tweet = tweet {
+                    print("Successfully Unfavorited the following Tweet: \n\(tweet.text)")
+                }
+            }
+        }
+        refreshData()
+    }
+    
+    @IBAction func didTapRetweet(_ sender: Any) {
+        if tweet.retweeted{
+            tweet.retweeted = false
+            tweet.retweetCount -= 1
+            APIManager.shared.unReTweet(tweet) { (tweet: Tweet?, error: Error?) in
+                if let  error = error {
+                    print("Error Unretweeting tweet: \(error.localizedDescription)")
+                } else if let tweet = tweet {
+                    print("Successfully UnRetweeted the following Tweet: \n\(tweet.text)")
+                }
+            }
+        } else{
+            tweet.retweeted = true
+            tweet.retweetCount += 1
+            APIManager.shared.reTweet(tweet) { (tweet: Tweet?, error: Error?) in
+                if let  error = error {
+                    print("Error Retweeting tweet: \(error.localizedDescription)")
+                } else if let tweet = tweet {
+                    print("Successfully Retweeted the following Tweet: \n\(tweet.text)")
+                }
+            }
+        }
+        refreshData()
+    }
+    
     
     func refreshData(){
         let indexPathToRefresh = IndexPath(row: 0, section: 0)

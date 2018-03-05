@@ -47,6 +47,10 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
                 print("Error getting home timeline: " + error.localizedDescription)
             }
         }
+        // Print the contents of all the tweets.
+        for a in self.tweets{
+            a.PrintDetails()
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshTableViewCell(_:)), name: NSNotification.Name(rawValue: "needToRefresh"), object: nil)
     }
     
