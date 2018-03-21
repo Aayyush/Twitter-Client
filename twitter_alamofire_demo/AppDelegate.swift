@@ -25,10 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = loginVC
         }
         
+        NotificationCenter.default.addObserver(forName: Notification.Name("returnHome"), object: nil, queue: OperationQueue.main) { (Notification) in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeTimelineViewController = storyboard.instantiateViewController(withIdentifier: "TweetNavigationTabController")
+            self.window?.rootViewController = homeTimelineViewController
+        }
+        
         if User.current != nil{
             // Load and show the login view controller
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeTimelineViewController = storyboard.instantiateViewController(withIdentifier: "TweetsNavigationController")
+            let homeTimelineViewController = storyboard.instantiateViewController(withIdentifier: "TweetNavigationTabController")
             window?.rootViewController = homeTimelineViewController
         }
         

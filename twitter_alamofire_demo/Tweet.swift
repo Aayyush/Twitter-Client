@@ -68,5 +68,53 @@ class Tweet {
         print("Retweeted: \(self.favorited!)")
     }
     
+    func favorite(){
+        if self.favorited!{
+            self.favorited = false
+            self.favoriteCount! -= 1
+            APIManager.shared.unFavorite(self) { (tweet: Tweet?, error: Error?) in
+                if let  error = error {
+                    print("Error favoriting tweet: \(error.localizedDescription)")
+                } else if let tweet = tweet {
+                    print("Successfully unfavorited the following Tweet: \n\(tweet.text)")
+                }
+            }
+        } else{
+            self.favorited = true
+            self.favoriteCount! += 1
+            APIManager.shared.favorite(self) { (tweet: Tweet?, error: Error?) in
+                if let  error = error {
+                    print("Error Unfavoriting tweet: \(error.localizedDescription)")
+                } else if let tweet = tweet {
+                    print("Successfully favorited the following Tweet: \n\(tweet.text)")
+                }
+            }
+        }
+    }
+    
+    func retweet(){
+        if self.retweeted{
+            self.retweeted = false
+            self.retweetCount -= 1
+            APIManager.shared.unReTweet(self) { (tweet: Tweet?, error: Error?) in
+                if let  error = error {
+                    print("Error Unretweeting tweet: \(error.localizedDescription)")
+                } else if let tweet = tweet {
+                    print("Successfully UnRetweeted the following Tweet: \n\(tweet.text)")
+                }
+            }
+        } else{
+            self.retweeted = true
+            self.retweetCount += 1
+            APIManager.shared.reTweet(self) { (tweet: Tweet?, error: Error?) in
+                if let  error = error {
+                    print("Error Retweeting tweet: \(error.localizedDescription)")
+                } else if let tweet = tweet {
+                    print("Successfully Retweeted the following Tweet: \n\(tweet.text)")
+                }
+            }
+        }
+    }
+    
 }
 

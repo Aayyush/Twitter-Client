@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09246BA9205DA0E600CE2E8B /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09246BA8205DA0E600CE2E8B /* TweetDetailViewController.swift */; };
+		09246BAB205E191500CE2E8B /* ComposeTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09246BAA205E191500CE2E8B /* ComposeTweetViewController.swift */; };
+		09A145742061D8E0005FFFE9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A145732061D8E0005FFFE9 /* ProfileViewController.swift */; };
+		09A145762061ED44005FFFE9 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A145752061ED44005FFFE9 /* ReplyViewController.swift */; };
 		547221C96829E6F537FCE2FE /* Pods_twitter_alamofire_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCA05DC47A45B9943F23F5F /* Pods_twitter_alamofire_demoUITests.framework */; };
 		6C028F67F4B75B9CE911AB20 /* Pods_twitter_alamofire_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001F2EB27736B82E6AF0082B /* Pods_twitter_alamofire_demo.framework */; };
 		ED1AFD311E942B2500FD4B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1AFD301E942B2500FD4B90 /* AppDelegate.swift */; };
@@ -43,6 +47,10 @@
 
 /* Begin PBXFileReference section */
 		001F2EB27736B82E6AF0082B /* Pods_twitter_alamofire_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twitter_alamofire_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09246BA8205DA0E600CE2E8B /* TweetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
+		09246BAA205E191500CE2E8B /* ComposeTweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTweetViewController.swift; sourceTree = "<group>"; };
+		09A145732061D8E0005FFFE9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		09A145752061ED44005FFFE9 /* ReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 		3FCA05DC47A45B9943F23F5F /* Pods_twitter_alamofire_demoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twitter_alamofire_demoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		434659329CA4ED45495F750D /* Pods-twitter_alamofire_demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter_alamofire_demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter_alamofire_demo/Pods-twitter_alamofire_demo.debug.xcconfig"; sourceTree = "<group>"; };
 		4DFA54CBFE40EC0C9E20906F /* Pods-twitter_alamofire_demoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter_alamofire_demoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter_alamofire_demoTests/Pods-twitter_alamofire_demoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,8 +200,12 @@
 		ED1D234A1EF6E3B800C51ACC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				09246BA8205DA0E600CE2E8B /* TweetDetailViewController.swift */,
 				ED1AFD601E94496E00FD4B90 /* LoginViewController.swift */,
 				ED1D234B1EF6E42900C51ACC /* TimelineViewController.swift */,
+				09246BAA205E191500CE2E8B /* ComposeTweetViewController.swift */,
+				09A145732061D8E0005FFFE9 /* ProfileViewController.swift */,
+				09A145752061ED44005FFFE9 /* ReplyViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -507,6 +519,7 @@
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwiftAlamofire/OAuthSwiftAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKPlaceholderTextView/RSKPlaceholderTextView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -517,6 +530,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwiftAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKPlaceholderTextView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -530,13 +544,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09246BAB205E191500CE2E8B /* ComposeTweetViewController.swift in Sources */,
 				ED1D23461EF63C1D00C51ACC /* User.swift in Sources */,
+				09A145742061D8E0005FFFE9 /* ProfileViewController.swift in Sources */,
 				ED1D234E1EF71C4B00C51ACC /* TweetCell.swift in Sources */,
 				ED1D23481EF6E37700C51ACC /* Tweet.swift in Sources */,
 				ED1AFD611E94496E00FD4B90 /* LoginViewController.swift in Sources */,
 				ED1AFD5F1E94421000FD4B90 /* APIManager.swift in Sources */,
+				09246BA9205DA0E600CE2E8B /* TweetDetailViewController.swift in Sources */,
 				ED1AFD311E942B2500FD4B90 /* AppDelegate.swift in Sources */,
 				ED1D234C1EF6E42900C51ACC /* TimelineViewController.swift in Sources */,
+				09A145762061ED44005FFFE9 /* ReplyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +662,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -693,6 +712,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -709,7 +729,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.twitter-alamofire-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -725,7 +745,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.twitter-alamofire-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -741,7 +761,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.twitter-alamofire-demoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/twitter_alamofire_demo.app/twitter_alamofire_demo";
 			};
@@ -758,7 +778,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.twitter-alamofire-demoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/twitter_alamofire_demo.app/twitter_alamofire_demo";
 			};
@@ -774,7 +794,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.twitter-alamofire-demoUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = twitter_alamofire_demo;
 			};
@@ -790,7 +810,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.twitter-alamofire-demoUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = twitter_alamofire_demo;
 			};

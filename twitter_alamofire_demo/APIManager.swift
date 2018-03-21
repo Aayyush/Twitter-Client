@@ -74,6 +74,24 @@ class APIManager: SessionManager {
                 }
         }
     }
+    
+    func getUserInformation(username: String, completion: @escaping (User?, Error?) -> ()) {
+        request(URL(string: "https://api.twitter.com/1.1/users/show.json?screen_name=\(username)")!)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(nil, error)
+                    break;
+                case .success:
+                    guard let userDictionary = response.result.value as? [String: Any] else {
+                        completion(nil, JSONError.parsing("Unable to create user dictionary"))
+                        return
+                    }
+                    completion(User(dictionary: userDictionary), nil)
+                }
+        }
+    }
         
     func getHomeTimeLine(completion: @escaping ([Tweet]?, Error?) -> ()) {
 
@@ -182,6 +200,30 @@ class APIManager: SessionManager {
                 print(response)
                 completion(nil, response.result.error)
             }
+        }
+    }
+    
+    func composeTweet(with text: String, completion: @escaping (Tweet?, Error?) -> ()) {
+        let urlString = "https://api.twitter.com/1.1/statuses/update.json"
+        let parameters = ["status": text]
+        oauthManager.client.post(urlString, parameters: parameters, headers: nil, body: nil, success: { (response: OAuthSwiftResponse) in
+            let tweetDictionary = try! response.jsonObject() as! [String: Any]
+            let tweet = Tweet(dictionary: tweetDictionary)
+            completion(tweet, nil)
+        }) { (error: OAuthSwiftError) in
+            completion(nil, error.underlyingError)
+        }
+    }
+    
+    func replyTweet(with text: String, status_id: String, completion: @escaping (Tweet?, Error?) -> ()) {
+        let urlString = "https://api.twitter.com/1.1/statuses/update.json"
+        let parameters = ["status": text, "in_reply_to_status_id": status_id]
+        oauthManager.client.post(urlString, parameters: parameters, headers: nil, body: nil, success: { (response: OAuthSwiftResponse) in
+            let tweetDictionary = try! response.jsonObject() as! [String: Any]
+            let tweet = Tweet(dictionary: tweetDictionary)
+            completion(tweet, nil)
+        }) { (error: OAuthSwiftError) in
+            completion(nil, error.underlyingError)
         }
     }
     
