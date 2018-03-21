@@ -11,6 +11,7 @@ import UIKit
 class TweetDetailViewController: UIViewController {
 
     
+    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var tweetContentLabel: UILabel!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var retweetCountLabel: UILabel!
@@ -26,7 +27,7 @@ class TweetDetailViewController: UIViewController {
         likeCountLabel.text = String(tweet.favoriteCount!)
         dateLabel.text = tweet.createdAtString.shortTimeAgoSinceNow
         retweetCountLabel.text = String(tweet.retweetCount)
-        screenNameLabel.text = tweet.user.screenName
+        screenNameLabel.text = String(describing: tweet.user.dictionary!["screen_name"]!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +39,7 @@ class TweetDetailViewController: UIViewController {
         tweet.retweet()
         if (tweet.retweeted){
          retweetCountLabel.text = String(Int(retweetCountLabel.text!)! + 1)
+         
         }else{
             retweetCountLabel.text = String(Int(retweetCountLabel.text!)! - 1)
         }

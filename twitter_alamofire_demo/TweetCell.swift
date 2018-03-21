@@ -26,7 +26,7 @@ class TweetCell: UITableViewCell {
             likeLabel.text = String(tweet.favoriteCount!)
             dateLabel.text = tweet.createdAtString.shortTimeAgoSinceNow
             retweetLabel.text = String(tweet.retweetCount)
-            screenNameLabel.text = tweet.user.screenName
+            screenNameLabel.text = String(describing: tweet.user.dictionary!["screen_name"]!)
         }
     }
     

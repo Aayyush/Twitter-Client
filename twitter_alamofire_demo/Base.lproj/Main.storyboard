@@ -141,23 +141,22 @@
                                                 <constraint firstAttribute="trailing" secondItem="KPF-mR-Hbb" secondAttribute="trailing" constant="66" id="AFZ-jd-2ug"/>
                                                 <constraint firstItem="tW5-NF-JRO" firstAttribute="top" secondItem="zd2-Er-659" secondAttribute="top" constant="24" id="Abb-Ds-8iB"/>
                                                 <constraint firstItem="7nR-c7-mT3" firstAttribute="top" secondItem="zd2-Er-659" secondAttribute="top" constant="24" id="Br7-E1-9SJ"/>
-                                                <constraint firstItem="jHz-Tp-N45" firstAttribute="top" secondItem="epC-Fs-Q5Z" secondAttribute="bottom" constant="8" id="Fuu-m8-SWs"/>
                                                 <constraint firstItem="W4X-mP-56P" firstAttribute="leading" secondItem="zd2-Er-659" secondAttribute="leading" constant="111" id="KwS-5l-cUB"/>
                                                 <constraint firstItem="KPF-mR-Hbb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="W4X-mP-56P" secondAttribute="trailing" constant="95" id="RKe-Ow-FMd"/>
+                                                <constraint firstAttribute="bottom" secondItem="epC-Fs-Q5Z" secondAttribute="bottom" constant="67.5" id="Spd-AL-9nL"/>
                                                 <constraint firstItem="KPF-mR-Hbb" firstAttribute="top" secondItem="jHz-Tp-N45" secondAttribute="bottom" constant="8" id="U1N-D4-doN"/>
                                                 <constraint firstItem="v9s-IM-fJL" firstAttribute="leading" secondItem="7nR-c7-mT3" secondAttribute="trailing" constant="8" id="aAm-6t-h7f"/>
                                                 <constraint firstItem="tW5-NF-JRO" firstAttribute="leading" secondItem="7nR-c7-mT3" secondAttribute="trailing" constant="8" id="aIK-tm-lPk"/>
                                                 <constraint firstItem="7nR-c7-mT3" firstAttribute="leading" secondItem="zd2-Er-659" secondAttribute="leading" constant="12" id="cr6-hB-rYd"/>
                                                 <constraint firstItem="6ue-bJ-Ers" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tW5-NF-JRO" secondAttribute="trailing" constant="97" id="dvY-5f-qgs"/>
                                                 <constraint firstItem="W4X-mP-56P" firstAttribute="top" secondItem="v9s-IM-fJL" secondAttribute="bottom" constant="8" id="dwp-GI-v7p"/>
-                                                <constraint firstAttribute="bottom" secondItem="W4X-mP-56P" secondAttribute="bottom" constant="0.5" id="e5b-Zi-WHr"/>
                                                 <constraint firstItem="jHz-Tp-N45" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v9s-IM-fJL" secondAttribute="trailing" constant="104" id="eWx-iO-GLG"/>
                                                 <constraint firstAttribute="trailing" secondItem="6ue-bJ-Ers" secondAttribute="trailing" constant="28" id="fPy-eA-VpO"/>
                                                 <constraint firstItem="epC-Fs-Q5Z" firstAttribute="top" secondItem="tW5-NF-JRO" secondAttribute="bottom" constant="8" id="hbU-bw-tTY"/>
                                                 <constraint firstAttribute="trailing" secondItem="jHz-Tp-N45" secondAttribute="trailing" constant="76" id="k2k-Cb-tX1"/>
                                                 <constraint firstItem="v9s-IM-fJL" firstAttribute="top" secondItem="epC-Fs-Q5Z" secondAttribute="bottom" constant="8" id="nmg-cF-CTP"/>
-                                                <constraint firstAttribute="bottom" secondItem="KPF-mR-Hbb" secondAttribute="bottom" constant="0.5" id="rop-gm-hjS"/>
                                                 <constraint firstAttribute="trailing" secondItem="epC-Fs-Q5Z" secondAttribute="trailing" constant="15" id="xxr-SD-Jpz"/>
+                                                <constraint firstItem="jHz-Tp-N45" firstAttribute="top" secondItem="epC-Fs-Q5Z" secondAttribute="bottom" constant="8" id="zwB-Ye-dge"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -366,7 +365,7 @@
                             <constraint firstItem="r15-A9-iXV" firstAttribute="leading" secondItem="7JZ-xi-ydA" secondAttribute="trailing" constant="67" id="Gab-Kz-GQF"/>
                             <constraint firstItem="rBJ-D4-Jrz" firstAttribute="top" secondItem="OCP-Sj-iie" secondAttribute="bottom" constant="8" id="Njo-5e-M3l"/>
                             <constraint firstItem="GN1-MO-moY" firstAttribute="leading" secondItem="r15-A9-iXV" secondAttribute="trailing" constant="8" id="P9D-5b-0Bo"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rBJ-D4-Jrz" secondAttribute="trailing" constant="129" id="QqQ-IZ-yHb"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="rBJ-D4-Jrz" secondAttribute="trailing" constant="129" id="QqQ-IZ-yHb"/>
                             <constraint firstItem="gRj-1P-247" firstAttribute="top" secondItem="K7B-p2-e0l" secondAttribute="bottom" constant="8" id="RRD-98-Yvg"/>
                             <constraint firstAttribute="trailing" secondItem="K7B-p2-e0l" secondAttribute="trailing" constant="16" id="SLg-mN-sPP"/>
                             <constraint firstItem="GNs-Ld-qTN" firstAttribute="leading" secondItem="KcV-r0-r0n" secondAttribute="leading" constant="16" id="Y2r-wH-fDR"/>
@@ -400,6 +399,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dateLabel" destination="gRj-1P-247" id="SEM-qW-uRr"/>
+                        <outlet property="likeButton" destination="lui-5T-TpK" id="x7g-J7-bWd"/>
                         <outlet property="likeCountLabel" destination="r15-A9-iXV" id="URC-ck-abF"/>
                         <outlet property="retweetCountLabel" destination="GNs-Ld-qTN" id="e9y-d3-Ohb"/>
                         <outlet property="screenNameLabel" destination="rBJ-D4-Jrz" id="24m-li-83f"/>
@@ -433,7 +433,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obe-VB-bkr">
                                 <rect key="frame" x="164" y="352" width="73" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Reply"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
